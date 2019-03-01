@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+# runs fsplit.py for an ACCESS simulation
+#=====================================================================================!
+#                                                                                     !
+#     Program:      ACCESS                                                            !
+#                   Atmospheric Chemistry and Canopy Exchange Simulation System       !
+#                                                                                     !
+#     Version:      2.0.0                                                             !
+#                                                                                     !
+#     Initiated:    August 2011                                                       !
+#     Last Update:  December 2015                                                     !
+#                                                                                     !
+#     Contact:      Rick D. Saylor, PhD                                               !
+#                   Physical Scientist                                                !
+#                   U. S. Department of Commerce                                      !
+#                   National Oceanic and Atmospheric Administration                   !
+#                   Air Resources Laboratory                                          !
+#                   Atmospheric Turbulence and Diffusion Division                     !
+#                   456 S. Illinois Ave                                               !
+#                   Oak Ridge, TN 37830                                               !
+#                   email: Rick.Saylor@noaa.gov                                       !
+#                                                                                     !
+#=====================================================================================!
+#
+if [ -n "$1" ]
+then
+  SIMDIR=$1
+else
+  echo "usage: simsplit SIMDIR"
+  exit 1
+fi
+
+# run the fsplit.py script
+lib/fsplit.py $SIMDIR sp
+lib/fsplit.py $SIMDIR budget
+lib/fsplit.py $SIMDIR emis
+lib/fsplit.py $SIMDIR ks
+lib/fsplit.py $SIMDIR rates
+lib/fsplit.py $SIMDIR vd
+lib/fsplit.py $SIMDIR vs
+lib/fsplit.py $SIMDIR rcanopy
+lib/fsplit.py $SIMDIR rsoill
+lib/fsplit.py $SIMDIR vflux
+
+exit 0
