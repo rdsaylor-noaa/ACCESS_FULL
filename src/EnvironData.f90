@@ -175,6 +175,8 @@ contains
     tsoilk = ts05k                   ! 5 cm temperature
     dtdzsoil = (tsoilk-ts55k)/0.5    ! soil temperature gradient (K/m)
 
+    nte=nte+1
+
     ! Canopy Physics
     !  Partition measured solar radiation and PPFD into direct and diffuse components
     call PartitionRAD()
