@@ -1148,8 +1148,8 @@ subroutine CalcWeightedProfiles()
   end do
 
   do i=npts,1,-1
-    if (ppfd_sun(ncnpy) > 0.0) then
-       fj(i) = ppfd_sun(i)/ppfd_sun(ncnpy)
+    if (ppfd_sun(ncnpy+1) > 0.0) then
+       fj(i) = ppfd_sun(i)/ppfd_sun(ncnpy+1)
     else
        fj(i) = 0.0
     end if
