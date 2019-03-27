@@ -71,7 +71,7 @@ subroutine IntegChemOneLevel(neqn, y, tin, tout, istate)
   ! internally generated Jacobian was much faster)
   options = SET_OPTS(DENSE_J=.TRUE.,ABSERR=atol, &
             RELERR=rtol,MXSTEP=500000,NZSWAG=50000, &
-            USER_SUPPLIED_JACOBIAN=.FALSE.)
+            MXHNIL=-1,USER_SUPPLIED_JACOBIAN=.FALSE.)
 
   call dvode_f90(fchemodes, neqn, y, tlin, tlout, itask, istate, options, j_fcn=jvode)
 

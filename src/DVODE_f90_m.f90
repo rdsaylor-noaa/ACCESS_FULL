@@ -6016,7 +6016,7 @@
         IF (MXSTEP<0) GOTO 530
         IF (MXSTEP==0) MXSTEP = MXSTP0
         MXHNIL = IWORK(7)
-        IF (MXHNIL<0) GOTO 540
+!       IF (MXHNIL<0) GOTO 540
         IF (MXHNIL==0) MXHNIL = MXHNL0
         IF (ISTATE/=1) GOTO 70
         H0 = RWORK(5)
